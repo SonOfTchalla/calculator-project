@@ -34,11 +34,11 @@ function operate(num1, operator, num2){
     {
         return subtract(num1, num2)
     }
-    else if(operator == '*')
+    else if(operator == 'X')
     {
         return multiply(num1, num2)
     }
-    else if(operator == '/')
+    else if(operator == '÷')
     {
         return divide(num1, num2)
     }
@@ -66,6 +66,7 @@ let deleteBtn = document.getElementById("delete")
 let backBtn = document.getElementById("back")
 
 //function to populate display
+let operatorIndex = 0;
 function populate(element){
     element.addEventListener("click", function(){
         if(element == deleteBtn)
@@ -79,9 +80,24 @@ function populate(element){
             displayEL.value = string
 
         }
+        else if(element == plusBtn || 
+                element == minusBtn || 
+                element == timesBtn || 
+                element == divideBtn)
+        {
+            displayEL.value += element.innerText
+            let string = String(displayEL.value)
+            operatorIndex = string.length
+            string = string.slice(0, string.length - 1)
+            number1 = Number(string)
+            
+        }
         else if(element == equalsBtn)
         {
-
+            let string = String(displayEL.value)
+            let newString = string.slice(operatorIndex, string.length)
+            number2 = Number(newString)
+            displayEL.value = operate(number1, string[operatorIndex-1],number2)
         }
         else
         {

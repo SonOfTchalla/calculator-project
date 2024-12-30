@@ -17,3 +17,9 @@ function multiply(num1, num2){
 function divide(num1, num2){
     return num1 / num2
 }
+
+
+//variables for calculator operations
+let number1 = ""
+let operator = ""
+let number2 = ""

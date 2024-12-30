@@ -63,3 +63,10 @@ let oneBtn = document.getElementById("one")
 let equalsBtn = document.getElementById("equals")
 let deleteBtn = document.getElementById("delete")
 let backBtn = document.getElementById("back")
+
+//function to populate display
+function populate(element){
+    element.addEventListener("click", function(){
+        displayEL.value += element.innerText
+    })
+}

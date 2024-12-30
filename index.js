@@ -44,3 +44,22 @@ function operate(num1, operator, num2){
     }
 
 }
+
+//query selectors
+let displayEL = document.getElementById("display")
+let plusBtn = document.getElementById("plus")
+let minusBtn = document.getElementById("minus")
+let timesBtn = document.getElementById("times")
+let divideBtn = document.getElementById("divide")
+let nineBtn = document.getElementById("nine")
+let eightBtn = document.getElementById("eight")
+let sevenBtn = document.getElementById("seven")
+let sixBtn = document.getElementById("six")
+let fiveBtn = document.getElementById("five")
+let fourBtn = document.getElementById("four")
+let threeBtn = document.getElementById("three")
+let twoBtn = document.getElementById("two")
+let oneBtn = document.getElementById("one")
+let equalsBtn = document.getElementById("equals")
+let deleteBtn = document.getElementById("delete")
+let backBtn = document.getElementById("back")

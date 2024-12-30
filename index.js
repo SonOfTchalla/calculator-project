@@ -68,7 +68,25 @@ let backBtn = document.getElementById("back")
 //function to populate display
 function populate(element){
     element.addEventListener("click", function(){
-        displayEL.value += element.innerText
+        if(element == deleteBtn)
+        {
+            displayEL.value = ""
+        }
+        else if(element == backBtn)
+        {
+            let string = String(displayEL.value)
+            string = string.slice(0, string.length - 1)
+            displayEL.value = string
+
+        }
+        else if(element == equalsBtn)
+        {
+
+        }
+        else
+        {
+            displayEL.value += element.innerText
+        }
     })
 }
 

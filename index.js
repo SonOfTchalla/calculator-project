@@ -72,6 +72,7 @@ function populate(element){
         if(element == deleteBtn)
         {
             displayEL.value = ""
+            operatorIndex = 0
         }
         else if(element == backBtn)
         {
@@ -94,10 +95,13 @@ function populate(element){
         }
         else if(element == equalsBtn)
         {
-            let string = String(displayEL.value)
-            let newString = string.slice(operatorIndex, string.length)
-            number2 = Number(newString)
-            displayEL.value = operate(number1, string[operatorIndex-1],number2)
+            if(operatorIndex != 0){
+                let string = String(displayEL.value)
+                let newString = string.slice(operatorIndex, string.length)
+                number2 = Number(newString)
+                displayEL.value = operate(number1, string[operatorIndex-1],number2)
+            }
+            operatorIndex = 0
         }
         else
         {

@@ -65,8 +65,13 @@ let equalsBtn = document.getElementById("equals")
 let deleteBtn = document.getElementById("delete")
 let backBtn = document.getElementById("back")
 
-//function to populate display
+//variable for index of the operator
 let operatorIndex = 0;
+
+//variable for operator count
+let operatorCount = 0;
+
+//function to populate display
 function populate(element){
     element.addEventListener("click", function(){
         if(element == deleteBtn)

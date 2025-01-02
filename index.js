@@ -78,6 +78,7 @@ function populate(element){
         {
             displayEL.value = ""
             operatorIndex = 0
+            operatorCount = 0
         }
         else if(element == backBtn)
         {
@@ -91,11 +92,26 @@ function populate(element){
                 element == timesBtn || 
                 element == divideBtn)
         {
+            operatorCount++
+            if(operatorCount > 1)
+            {
+                let string = String(displayEL.value)
+                let string1 = string.slice(0, operatorIndex-1)
+                let operator = string.slice(operatorIndex-1, operatorIndex)
+                let string2 = string.slice(operatorIndex, string.length)
+                number1 = operate(Number(string1), operator, Number(string2))
+                displayEL.value = number1
+                displayEL.value += element.innerText
+                operatorCount = 1
+                operatorIndex = displayEL.value.length
+            }
+            else{
             displayEL.value += element.innerText
             let string = String(displayEL.value)
             operatorIndex = string.length
             string = string.slice(0, string.length - 1)
             number1 = Number(string)
+            }
             
         }
         else if(element == equalsBtn)
@@ -107,6 +123,7 @@ function populate(element){
                 displayEL.value = operate(number1, string[operatorIndex-1],number2)
             }
             operatorIndex = 0
+            operatorCount = 0
         }
         else
         {

@@ -120,7 +120,9 @@ function populate(element){
                 let string = String(displayEL.value)
                 let newString = string.slice(operatorIndex, string.length)
                 number2 = Number(newString)
-                displayEL.value = operate(number1, string[operatorIndex-1],number2).toFixed(8)
+                let solution = operate(number1, string[operatorIndex-1],number2)
+                solution % 1 != 0 ? solution = solution.toFixed(8): solution
+                displayEL.value = solution
             }
             operatorIndex = 0
             operatorCount = 0

@@ -103,7 +103,8 @@ function populate(element){
                 let string1 = string.slice(0, operatorIndex-1)
                 let operator = string.slice(operatorIndex-1, operatorIndex)
                 let string2 = string.slice(operatorIndex, string.length)
-                number1 = operate(Number(string1), operator, Number(string2)).toFixed(8)
+                number1 = operate(Number(string1), operator, Number(string2))
+                number1 % 1 != 0 && number1 != "ERROR" ? number1 = number1.toFixed(8): number1
                 displayEL.value = number1
                 displayEL.value += element.innerText
                 operatorCount = 1

@@ -38,9 +38,13 @@ function operate(num1, operator, num2){
     {
         return multiply(num1, num2)
     }
-    else if(operator == '÷')
+    else if(operator == '÷' && num2 != 0)
     {
         return divide(num1, num2)
+    }
+    else if(operator == '÷' && num2 == 0)
+    {
+        return "ERROR"
     }
 
 }
@@ -121,7 +125,7 @@ function populate(element){
                 let newString = string.slice(operatorIndex, string.length)
                 number2 = Number(newString)
                 let solution = operate(number1, string[operatorIndex-1],number2)
-                solution % 1 != 0 ? solution = solution.toFixed(8): solution
+                solution % 1 != 0 && solution != "ERROR" ? solution = solution.toFixed(8): solution
                 displayEL.value = solution
             }
             operatorIndex = 0

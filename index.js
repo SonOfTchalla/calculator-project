@@ -68,6 +68,7 @@ let zeroBtn = document.getElementById("zero")
 let equalsBtn = document.getElementById("equals")
 let deleteBtn = document.getElementById("delete")
 let backBtn = document.getElementById("back")
+let pointBtn  = document.getElementById("point")
 
 //variable for index of the operator
 let operatorIndex = 0;

@@ -87,8 +87,13 @@ function populate(element){
         else if(element == backBtn)
         {
             let string = String(displayEL.value)
-            string = string.slice(0, string.length - 1)
-            displayEL.value = string
+            if(string != 'ERROR'){
+                string = string.slice(0, string.length - 1)
+                displayEL.value = string
+            }
+            else{
+                displayEL.value = ""
+            }
 
         }
         else if(element == plusBtn || 

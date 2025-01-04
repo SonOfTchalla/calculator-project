@@ -114,7 +114,13 @@ function populate(element){
                 let operator = string.slice(operatorIndex-1, operatorIndex)
                 let string2 = string.slice(operatorIndex, string.length)
                 number1 = operate(Number(string1), operator, Number(string2))
-                number1 % 1 != 0 && number1 != "ERROR" ? number1 = number1.toFixed(8): number1
+                if(number1 % 1 != 0 && number1 != "ERROR")
+                {
+                    number1 = number1.toFixed(8)
+                }
+                else{
+                    number1
+                }
                 displayEL.value = number1
                 displayEL.value += element.innerText
                 operatorCount = 1
@@ -136,7 +142,13 @@ function populate(element){
                 let newString = string.slice(operatorIndex, string.length)
                 number2 = Number(newString)
                 let solution = operate(number1, string[operatorIndex-1],number2)
-                solution % 1 != 0 && solution != "ERROR" ? solution = solution.toFixed(8): solution
+                if(solution % 1 != 0 && solution != "ERROR")
+                {
+                        solution = solution.toFixed(8)
+                }
+                else{
+                    solution
+                }
                 displayEL.value = solution
             }
             operatorIndex = 0

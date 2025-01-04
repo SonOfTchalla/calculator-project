@@ -117,6 +117,7 @@ function populate(element){
                 if(number1 % 1 != 0 && number1 != "ERROR")
                 {
                     number1 = number1.toFixed(8)
+                    pointCount = 1;
                 }
                 else{
                     number1
@@ -145,6 +146,7 @@ function populate(element){
                 if(solution % 1 != 0 && solution != "ERROR")
                 {
                         solution = solution.toFixed(8)
+                        pointCount = 1;
                 }
                 else{
                     solution

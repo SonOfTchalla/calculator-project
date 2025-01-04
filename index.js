@@ -96,10 +96,10 @@ function populate(element){
             }
 
         }
-        else if(element == plusBtn || 
+        else if((element == plusBtn || 
                 element == minusBtn || 
                 element == timesBtn || 
-                element == divideBtn)
+                element == divideBtn) && displayEL.value != 'ERROR')
         {
             operatorCount++
             if(operatorCount > 1)
@@ -139,7 +139,8 @@ function populate(element){
         }
         else
         {
-            displayEL.value += element.innerText
+            if(displayEL.value != 'ERROR')
+                displayEL.value += element.innerText
         }
     })
 }

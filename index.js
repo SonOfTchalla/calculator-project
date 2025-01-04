@@ -76,6 +76,9 @@ let operatorIndex = 0;
 //variable for operator count
 let operatorCount = 0;
 
+//variable count for decimal point
+let pointCount = 0;
+
 //function to populate display
 function populate(element){
     element.addEventListener("click", function(){
@@ -84,6 +87,7 @@ function populate(element){
             displayEL.value = ""
             operatorIndex = 0
             operatorCount = 0
+            pointCount = 0
         }
         else if(element == backBtn)
         {
@@ -123,7 +127,7 @@ function populate(element){
             string = string.slice(0, string.length - 1)
             number1 = Number(string)
             }
-            
+            pointCount = 0;
         }
         else if(element == equalsBtn)
         {
@@ -137,6 +141,12 @@ function populate(element){
             }
             operatorIndex = 0
             operatorCount = 0
+        }
+        else if(element == pointBtn){
+            if (pointCount < 1){
+                displayEL.value += element.innerText
+                pointCount++
+            }
         }
         else
         {

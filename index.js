@@ -149,7 +149,8 @@ function populate(element){
                         pointCount = 1;
                 }
                 else{
-                    solution
+                    solution = solution
+                    pointCount = 0
                 }
                 displayEL.value = solution
             }

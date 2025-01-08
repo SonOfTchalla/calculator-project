@@ -126,7 +126,6 @@ let operators = ["KeyX", "Minus", "Slash", "NumpadAdd"]
 let actualizers = ["Backspace", "Equal", "Delete"]
 
 document.addEventListener('keydown', function(event){
-    console.log(event.code)
     if(numbers.includes(event.code))
         standard(event.key)
     else if(operators.includes(event.code)){

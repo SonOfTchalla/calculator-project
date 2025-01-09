@@ -129,18 +129,21 @@ populate(pointBtn)
 
 //Arrays to store keyboard buttons' event codes
 const numbers = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0"]
-const operators = ["KeyX", "Minus", "Slash", "NumpadAdd"]
+const operators = ["KeyX", "NumpadMultiply" , "Minus", "NumpadSubtract", "Slash", "NumpadDivide", "NumpadAdd"]
 const actualizers = ["Backspace", "Equal", "Delete"]
 
 //event listener for when a keyboard button is clicked
 document.addEventListener('keydown', function(event){
+    console.log(event.key)
     //if the button is a number button
     if(numbers.includes(event.code))
         standard(event.key)
     //if the button is an operator button
     else if(operators.includes(event.code)){
-        if(event.code != "Slash")
+        if(event.code != "Slash" && event.code != "NumpadDivide" && event.code != "NumpadMultiply")
             op(event.key)
+        else if(event.code == "NumpadMultiply")
+            op(timesBtn.innerText)
         else
             op(divideBtn.innerText)
         

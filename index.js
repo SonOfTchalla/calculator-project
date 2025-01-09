@@ -82,20 +82,26 @@ let pointCount = 0;
 //function to populate display
 function populate(element){
     element.addEventListener("click", function(){
-        if(element == deleteBtn)
+        //if clear button clicked
+        if(element == deleteBtn) 
             clear()
+        //if backspace button clicked
         else if(element == backBtn)
             backspace()
+        //if operator button is clicked and ERROR is not currently displayed
         else if((element == plusBtn || 
                 element == minusBtn || 
                 element == timesBtn || 
                 element == divideBtn) && 
                 displayEL.value != 'ERROR')
             op(element.innerText);
+        //if equals button clicked
         else if(element == equalsBtn)
             equals()
+        //if decimal point number is clicked
         else if(element == pointBtn)
             decimal(element.innerText)
+        //in any other situation
         else
             standard(element.innerText)
     })
@@ -121,13 +127,17 @@ populate(deleteBtn)
 populate(backBtn)
 populate(pointBtn)
 
+//Arrays to store keyboard buttons' event codes
 let numbers = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0"]
 let operators = ["KeyX", "Minus", "Slash", "NumpadAdd"]
 let actualizers = ["Backspace", "Equal", "Delete"]
 
+//event listener for when a keyboard button is clicked
 document.addEventListener('keydown', function(event){
+    //if the button is a number button
     if(numbers.includes(event.code))
         standard(event.key)
+    //if the button is an operator button
     else if(operators.includes(event.code)){
         if(event.code != "Slash")
             op(event.key)
@@ -135,6 +145,7 @@ document.addEventListener('keydown', function(event){
             op(divideBtn.innerText)
         
     }
+    //if the button is a button to delete, backspace or equals
     else if(actualizers.includes(event.code))
     {
         if(event.code == "Delete")
@@ -144,12 +155,15 @@ document.addEventListener('keydown', function(event){
         else
             equals()
     }
+    //if the button is the period or decimal point
     else if(event.code == "Period")
     {
         decimal(event.key)
     }
 } );
 
+
+//function to be called everytime an operator button is clicked
 function op(element){
     operatorCount++
             if(operatorCount > 1)
@@ -182,11 +196,14 @@ function op(element){
             pointCount = 0;
 }
 
+//function to update the displace when a number is clicked
 function standard(digit){
     if(displayEL.value != 'ERROR')
         displayEL.value += digit
 }
 
+
+//function to clear display and rest all counts
 function clear()
 {
     displayEL.value = ""
@@ -195,6 +212,8 @@ function clear()
     pointCount = 0
 }
 
+
+//function that deletes the last digit on the display
 function backspace()
 {
     let string = String(displayEL.value)
@@ -207,6 +226,7 @@ function backspace()
     }
 }
 
+//function that updates the display when equal button pressed
 function equals()
 {
     if(operatorIndex != 0){
@@ -230,6 +250,7 @@ function equals()
     operatorCount = 0
 }
 
+//function that adds a decimal point to the display
 function decimal(element)
 {
     if (pointCount < 1){

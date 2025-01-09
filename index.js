@@ -222,9 +222,18 @@ function backspace()
     if(string != 'ERROR'){
         string = string.slice(0, string.length - 1)
         displayEL.value = string
+        if (displayEL.value == "")
+        {
+            operatorIndex = 0
+            operatorCount = 0
+            pointCount = 0
+        }
     }
     else{
        displayEL.value = ""
+       operatorIndex = 0
+       operatorCount = 0
+        pointCount = 0
     }
 }
 

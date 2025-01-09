@@ -128,9 +128,9 @@ populate(backBtn)
 populate(pointBtn)
 
 //Arrays to store keyboard buttons' event codes
-let numbers = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0"]
-let operators = ["KeyX", "Minus", "Slash", "NumpadAdd"]
-let actualizers = ["Backspace", "Equal", "Delete"]
+const numbers = ["Digit1", "Digit2", "Digit3", "Digit4", "Digit5", "Digit6", "Digit7", "Digit8", "Digit9", "Digit0"]
+const operators = ["KeyX", "Minus", "Slash", "NumpadAdd"]
+const actualizers = ["Backspace", "Equal", "Delete"]
 
 //event listener for when a keyboard button is clicked
 document.addEventListener('keydown', function(event){

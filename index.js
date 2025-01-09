@@ -134,7 +134,6 @@ const actualizers = ["Backspace", "Equal", "Enter", "NumpadEnter", "Delete"]
 
 //event listener for when a keyboard button is clicked
 document.addEventListener('keydown', function(event){
-    console.log(event.code)
     //if the button is a number button
     if(numbers.includes(event.code))
         standard(event.key)

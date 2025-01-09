@@ -221,19 +221,13 @@ function backspace()
     let string = String(displayEL.value)
     if(string != 'ERROR'){
         string = string.slice(0, string.length - 1)
-        displayEL.value = string
-        if (displayEL.value == "")
-        {
-            operatorIndex = 0
-            operatorCount = 0
-            pointCount = 0
-        }
+        if (string == "")
+            clear()
+        else
+            displayEL.value = string
     }
     else{
-       displayEL.value = ""
-       operatorIndex = 0
-       operatorCount = 0
-        pointCount = 0
+       clear()
     }
 }
 
